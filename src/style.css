@@ -227,3 +227,24 @@
 .mainShell .returnWarningActions{justify-content:flex-end;margin-top:8px;padding-top:8px;border-top:1px solid #e4eeea}
 .mainShell .returnTrainChangeButton{width:auto;min-height:40px;margin-left:auto;padding:6px 13px;border:1px solid #e79a42;border-radius:999px;background:#e88924;color:#fff;box-shadow:none;font-size:13px;white-space:nowrap}
 .mainShell .returnTrainChangeButton:hover{background:#d97512}
+.brandTitlePrefix{font-size:.78em}
+.detailHeadingRow{display:flex;min-width:0;align-items:center;justify-content:space-between;gap:10px}
+.detailHeadingRow>strong{flex:1;min-width:0;color:#006550;font-size:17px;line-height:1.5}
+.detailHeadingRow>audio{display:none}
+.detailAudioToggle{display:grid;flex:none;width:42px;height:42px;place-items:center;border:1.5px solid #85d4bc;border-radius:50%;background:#f5fbf8;color:#00624f}
+.detailAudioToggle:hover{background:#e8f7f0}
+.detailAudioToggle[aria-pressed="true"]{background:#00785f;color:#fff}
+.mainShell .message.userQuestion{align-self:flex-end;width:min(88%,620px);border-color:#d8e7fb;background:#eef5ff}
+.mainShell .message.aiError{border-color:#f0ddbc;background:#fff9ee}
+.mainShell .systemMessageTop{grid-template-columns:minmax(0,1fr)}
+.mainShell .messageSpeaker{margin-right:auto;color:#526b85;font-size:12px}
+.mainShell .aiQuestionForm{display:grid;flex:0 0 auto;gap:5px;margin-top:7px;padding:8px 2px max(3px,env(safe-area-inset-bottom));border-top:1px solid #e4eeea;background:#fff}
+.mainShell .aiQuestionLabel{color:#00624f;font-size:12px;font-weight:800}
+.mainShell .aiQuestionControls{display:flex;gap:8px;align-items:center}
+.mainShell .aiQuestionControls input{width:100%;min-width:0;height:44px;padding:0 13px;border:1px solid #cfe1d8;border-radius:14px;background:#fbfefc;color:#14223d;font:inherit;font-size:16px}
+.mainShell .aiQuestionControls input:focus{outline:2px solid #73bfa9;outline-offset:1px}
+.mainShell .aiQuestionControls button{display:grid;flex:none;width:44px;height:44px;place-items:center;border:0;border-radius:14px;background:#00785f;color:#fff}
+.mainShell .aiQuestionControls button:disabled{cursor:not-allowed;opacity:.45}
+.mainShell .aiQuestionLoading{display:flex;align-items:center;gap:6px;color:#08735b;font-size:12px}
+.mainShell .loadingIcon{animation:aiQuestionSpin 1s linear infinite}
+@keyframes aiQuestionSpin{to{transform:rotate(360deg)}}

@@ -1,175 +1,175 @@
 [
   {
     "id": "daily-01",
-    "text": "我一有在意的事，就会忍不住一直想。",
+    "text": "ぼくって、気になることがあるとつい考えちゃうんだよね",
     "category": "curiosity",
     "enabled": true,
     "weight": 1
   },
   {
     "id": "daily-02",
-    "text": "传说故事真奇妙呀。到底有多少是真的呢？",
+    "text": "昔話って不思議だよね。どこまで本当だったんだろう",
     "category": "curiosity",
     "enabled": true,
     "weight": 1
   },
   {
     "id": "daily-03",
-    "text": "还有好多好多事情是我不知道的吧。",
+    "text": "知らないことって、まだまだいっぱいあるんだろうなぁ",
     "category": "curiosity",
     "enabled": true,
     "weight": 1
   },
   {
     "id": "daily-04",
-    "text": "想着在意的事，回过神来时间就过去了。",
+    "text": "気になることを考えてたら、いつの間にか時間が過ぎちゃうんだよね",
     "category": "curiosity",
     "enabled": true,
     "weight": 1
   },
   {
     "id": "daily-05",
-    "text": "活了几百年的树都看过怎样的风景呢？",
+    "text": "何百年も生きている木って、どんな景色を見てきたんだろう",
     "category": "curiosity",
     "enabled": true,
     "weight": 1
   },
   {
     "id": "daily-06",
-    "text": "虽然我是鬼，但也不是所有鬼都很可怕呀。",
+    "text": "鬼だからって、みんな怖いわけじゃないんだけどなぁ",
     "category": "oni",
     "enabled": true,
     "weight": 1
   },
   {
     "id": "daily-07",
-    "text": "我想成为帅气的鬼，不过被夸可爱也很开心。",
+    "text": "ぼく、かっこいい鬼になりたいけど、かわいいって言われるのもうれしいんだよね",
     "category": "oni",
     "enabled": true,
     "weight": 1
   },
   {
     "id": "daily-08",
-    "text": "其实我有点怕黑。",
+    "text": "実はぼく、暗いところってちょっと苦手なんだ",
     "category": "oni",
     "enabled": true,
     "weight": 1
   },
   {
     "id": "daily-09",
-    "text": "听到可怕的鬼故事，我也会紧张起来。",
+    "text": "怖い鬼のお話を聞くと、ぼくまでドキドキしちゃうんだよね",
     "category": "oni",
     "enabled": true,
     "weight": 1
   },
   {
     "id": "daily-10",
-    "text": "虽然鬼听起来很吓人，但我更喜欢悠闲自在。",
+    "text": "鬼って聞くと怖そうだけど、ぼくはのんびりしてる方が好きだなぁ",
     "category": "oni",
     "enabled": true,
     "weight": 1
   },
   {
     "id": "daily-11",
-    "text": "看着树叶摇曳，我总觉得很喜欢。",
+    "text": "木の葉が揺れてるのを見るの、なんだか好きなんだ",
     "category": "nature",
     "enabled": true,
     "weight": 1
   },
   {
     "id": "daily-12",
-    "text": "仔细听的话，森林里有各种各样的声音。",
+    "text": "森の中の音って、よく聞くといろんな音がするんだよね",
     "category": "nature",
     "enabled": true,
     "weight": 1
   },
   {
     "id": "daily-13",
-    "text": "看到高大的树，我就会忍不住抬头看。",
+    "text": "大きな木を見ると、つい見上げちゃうんだよなぁ",
     "category": "nature",
     "enabled": true,
     "weight": 1
   },
   {
     "id": "daily-14",
-    "text": "听着风声，心情就会平静下来。",
+    "text": "風の音を聞いてると、なんだか落ち着くなぁ",
     "category": "nature",
     "enabled": true,
     "weight": 1
   },
   {
     "id": "daily-15",
-    "text": "季节变了，同一个地方看起来也会不一样吗？",
+    "text": "季節が変わると、同じ場所でも違って見えるのかな",
     "category": "nature",
     "enabled": true,
     "weight": 1
   },
   {
     "id": "daily-16",
-    "text": "我刚才在想什么来着……咦，是什么呢？",
+    "text": "さっき何か考えてたんだけど……あれ、何だったっけ？",
     "category": "oops",
     "enabled": true,
     "weight": 1
   },
   {
     "id": "daily-17",
-    "text": "发着呆，不知不觉又自言自语了。",
+    "text": "ぼーっとしてたら、また独り言が出ちゃった",
     "category": "oops",
     "enabled": true,
     "weight": 1
   },
   {
     "id": "daily-18",
-    "text": "一想事情，有时连自己在想什么都会忘记。",
+    "text": "考え事をしてると、たまに自分でも何を考えてたか忘れちゃうんだ",
     "category": "oops",
     "enabled": true,
     "weight": 1
   },
   {
     "id": "daily-19",
-    "text": "本来想说点帅气的话，却什么也没想到。",
+    "text": "かっこいいことを言おうと思ったのに、何も思いつかなかったなぁ",
     "category": "oops",
     "enabled": true,
     "weight": 1
   },
   {
     "id": "daily-20",
-    "text": "嗯，今天想些什么好呢……啊，我又开始想事情了。",
+    "text": "うーん、今日は何を考えようかな……あ、また考え事してる",
     "category": "oops",
     "enabled": true,
     "weight": 1
   },
   {
     "id": "daily-21",
-    "text": "什么也不做的时光，其实也挺奢侈的呢。",
+    "text": "何もしない時間って、実はけっこう贅沢なのかもね",
     "category": "calm",
     "enabled": true,
     "weight": 1
   },
   {
     "id": "daily-22",
-    "text": "我也很喜欢悠闲自在的时光。",
+    "text": "ぼく、のんびりする時間も結構好きなんだ",
     "category": "calm",
     "enabled": true,
     "weight": 1
   },
   {
     "id": "daily-23",
-    "text": "偶尔不慌不忙地度过也不错呢。",
+    "text": "急がないで過ごすのも、たまにはいいよね",
     "category": "calm",
     "enabled": true,
     "weight": 1
   },
   {
     "id": "daily-24",
-    "text": "希望大家都能找到自己喜欢的东西。",
+    "text": "みんなが自分の好きなものを見つけられたらいいなぁ",
     "category": "calm",
     "enabled": true,
     "weight": 1
   },
   {
     "id": "daily-25",
-    "text": "快乐说不定就藏在不起眼的小事里呢。",
+    "text": "楽しいことって、意外と小さなところにあるのかもしれないね",
     "category": "calm",
     "enabled": true,
     "weight": 1

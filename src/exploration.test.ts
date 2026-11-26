@@ -35,6 +35,6 @@ test('the four discovery cards refer to their own supplied photos',()=>{
 test('course visit display comes from route spot IDs and app names',()=>{
  const names=Object.fromEntries(spots.map(spot=>[spot.id,spot.name]));
  assert.deepEqual(routeStopLabels(routes[0].spotIds,names),[
-  '大江山口内宫站（出发）','麻吕子杉','黑木鸟居','元伊势内宫皇大神社·正殿','龙灯杉','日室岳遥拜所','天岩户神社','大江山口内宫站（返程）',
+  '大江山口内宮駅（出発）','麻呂子スギ','黒木の鳥居','元伊勢内宮皇大神社・本殿','龍灯の杉','日室ヶ岳遥拝所','天岩戸神社','大江山口内宮駅（帰着）',
  ]);
 });

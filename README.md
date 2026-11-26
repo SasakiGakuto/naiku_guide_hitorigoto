@@ -103,3 +103,30 @@ React 18、TypeScript、Vite、Express、better-sqlite3、lucide-react。通知�
 - 元伊勢内宮の探索中は、写真付きの2列スポットパネルを画面下部に固定します。探索エリア外、全地点発見後、帰着案内中はパネルを隠します。
 - 案内終了と通知音・開発設定は右上メニューから開きます。案内開始後の画面には地点変更・次のスポットへのボタンを表示しません。
 - 詳細画面は対象スポットの写真を先頭に表示し、現在地・列車カードや探索パネルを隠します。詳細から戻るとひとりごとのスクロール位置を復元します。
+
+## Gemini APIによる質問機能
+
+案内中はメイン画面のチャット履歴の下から、くろおにくんへ自由に質問できます。利用者の質問は青色の吹き出し、回答は通常のくろおにくんの発言カードに分けて表示します。回答待ち中も履歴をスクロールでき、GPS、スポット発見、帰着案内は従来どおり動作します。回答中の二重送信を防ぎ、セッションを終了した後に届いた回答は画面へ追加しません。同日中にセッションを再開すると、質問・回答はほかの履歴と同じくlocalStorageから戻ります。翌日や新しいセッションには引き継ぎません。
+
+質問と回答は研究用としてSQLite互換DBの `ai_questions` に全文保存します。回答できなかった質問も `response_status` と応答時間を記録します。visitor_id、session_id、question_id、質問・回答日時、モデル、入出力トークン数、応答状態、応答時間を保存します。同じquestion_idの再送は重複記録・再生成を避けます。Geminiへ渡す会話は直近20発言までで、自発的なひとりごとと利用者の質問・AI回答を時系列で含めます。GPS発言、テスト発言、エラー表示などは送信しません。質問は2,000文字まで、同一visitor_idは1分8件、同一接続元は1分30件までの短時間レート制限があります。日単位のアプリ内質問上限はありません。
+
+質問内容は研究目的で全文を記録します。自由入力には個人情報が含まれる可能性があるため、公開前に研究参加者への説明・同意手続きと研究データの取扱いを確認してください。
+
+### GeminiモデルとAPIキー
+
+既定モデルは `gemini-3.5-flash-lite` です。モデルIDは `GEMINI_MODEL` で変更できます。Googleの現在のモデル・料金案内では、Gemini 3.5 Flash-Liteは安定版の軽量モデルで無料枠が掲載されています。無料枠の上限はGoogle側で変わる場合があり、APIキーが有料枠のプロジェクトに属する場合は利用料が発生する可能性があります。アプリは別モデルへの自動切替や課金設定の有効化を行いません。Google Search Groundingも使用しません。
+
+ローカルでは `.env.example` を参考に、Git管理外の `.env` に `GEMINI_API_KEY` と任意の `GEMINI_MODEL` を設定します。起動時に読み込むため、`.env` をGitHubへ追加しないでください。現在の開発環境ではnpmレジストリのDNS/TLS接続に失敗し、`@google/genai` SDKを取得できなかったため、Gemini公式の `generateContent` HTTPS APIをサーバーから直接呼び出しています。APIキーはリクエストヘッダーにだけ渡し、ブラウザ・ログには出しません。
+
+### SQLite・Vercel設定
+
+ローカルのExpressサーバーは既存DBに `ai_questions` と短時間制限用テーブルを追加します。管理者は `ADMIN_TOKEN` を設定し、次のようにBearer認証付きで質問履歴をCSV出力できます。
+
+```powershell
+Invoke-WebRequest -Headers @{ Authorization = "Bearer $env:ADMIN_TOKEN" } `
+  http://localhost:3001/api/admin/ai-questions.csv -OutFile ai-questions.csv
+```
+
+Vercel Functionsのファイルシステムは永続DBとして使えないため、VercelではSQLite互換の永続DBとしてTurso/libSQLを利用します。プロジェクト環境変数に `GEMINI_API_KEY`、`GEMINI_MODEL`、`TURSO_DATABASE_URL`、`TURSO_AUTH_TOKEN`、`ADMIN_TOKEN` を登録してください。TursoのURLは `libsql://...` またはHTTPS URLです。AIログ用テーブルは初回の質問時に自動作成します。Tursoを設定しない間、Vercelの質問APIは安全側に停止し、ローカルのSQLiteへは書き込みません。
+
+公開前に、Google AI Studioのプロジェクトが無料枠で動作すること、TursoのDB/tokenが作成済みであることを確認してからVercelに環境変数を設定し、再デプロイしてください。Vercelの管理者CSVは `GET /api/admin/ai-questions.csv` に `Authorization: Bearer <ADMIN_TOKEN>` を付けて取得します。Gemini質問機能のデプロイと実API呼び出しは、この作業では行っていません。

@@ -1,9 +1,9 @@
 {
   "id": "/",
-  "name": "大江导览·黑鬼君",
-  "short_name": "黑鬼君",
-  "description": "与黑鬼君一起游览福知山市大江町的观光导览应用",
-  "lang": "zh-CN",
+  "name": "大江案内鬼くろおにくん",
+  "short_name": "くろおにくん",
+  "description": "福知山市大江町を、くろおにくんと巡る観光案内アプリ",
+  "lang": "ja",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
